@@ -1,5 +1,6 @@
 html {
-  background: #8ED2C9;
+  background: rgb(170, 214, 209);
+  background: linear-gradient(85deg, rgba(170, 214, 209, 1) 8%, rgba(140, 224, 214, 1) 33%, rgba(81, 227, 208, 1) 61%, rgba(38, 207, 185, 1) 100%);
   min-height: 1000px;
   font-family: "helvetica neue";
 }
@@ -60,7 +61,7 @@ button {
   width: 50px;
   border-radius: 50%;
   border-color: transparent;
-  background-color: #00AAA0;
+  background-color: #462066;
   color: #fff;
   font-size: 30px;
   padding-bottom: 6px;
