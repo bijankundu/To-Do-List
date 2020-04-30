@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 const app = express();
 
+mongoose.set("useFindAndModify", false);
+
 app.set("view engine", "ejs");
 
 app.use(
@@ -14,10 +16,13 @@ app.use(
 app.use(express.static("public"));
 
 // let items = [];
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://bijan:kr9m5mYSUiUnbnK@cluster0-kja2f.gcp.mongodb.net/todolistDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const itemsSchema = {
   name: String,
@@ -130,6 +135,6 @@ app.post("/delete", function (req, res) {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server is successfully running");
 });
